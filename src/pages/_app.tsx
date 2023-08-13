@@ -1,4 +1,5 @@
 import { CheckAccess } from '@components/Auth/CheckAccess/CheckAccess';
+import { ModalsProvider } from '@components/Shared/Modals/ModalsProvider/ModalsProvider';
 import { wrapper } from '@redux/store';
 import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
@@ -16,6 +17,7 @@ export const App = ({ Component, ...props }: Props | any) => {
   return (
     <ThemeProvider enableSystem={false} defaultTheme="dark" attribute="class">
       {checkAuth(<Component {...pageProps} />)}
+      <ModalsProvider />
     </ThemeProvider>
   );
 };

@@ -1,0 +1,7 @@
+
+export const ModalsProvider = () => {
+    return (
+        <>
+        </>
+    )
+}
