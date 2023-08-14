@@ -2,11 +2,19 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 export const LoginStyle = styled.div`
-  ${tw`w-[30rem] min-h-[40rem] flex flex-col justify-center text-blue-900`}
+  ${tw`w-[30rem] min-h-[30rem] flex flex-col justify-center text-blue-900 bg-white items-center  rounded-2xl transition-all relative`}
 `;
 
 export const LoginWrapperStyle = styled.form`
-  ${tw` bg-white border-[0.5px] border-gray-600 items-center p-12 rounded flex flex-col min-w-full `}
+  ${tw`min-w-full`}
+`;
+
+export const LoginContainerStyle = styled.div<{ otpShow: boolean }>`
+  ${tw`bg-white top-0 absolute z-50 min-w-full h-full flex flex-col items-center p-12 rounded-2xl`}
+  position: absolute;
+  transform: ${({ otpShow }) => otpShow && 'translateX(0)'};
+  opacity: ${({ otpShow }) => otpShow && '0'};
+  transition: 200ms ease-in-out;
 `;
 
 export const PageTitleStyle = styled.h1`
@@ -28,3 +36,11 @@ export const InputLableStyle = styled.label`
 `;
 
 // Input section style-------------------------------------
+
+export const OtpContainer = styled.div<{ otpShow: boolean }>`
+  ${tw`rounded-2xl`}
+  position: absolute;
+  transform: ${({ otpShow }) => !otpShow && 'translateX(0)'};
+  opacity: ${({ otpShow }) => !otpShow && '0'};
+  transition: 200ms ease-in-out;
+`;

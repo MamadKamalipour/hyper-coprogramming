@@ -1,9 +1,9 @@
 export interface ILoginPropsType {
-  Email?: boolean;
+  isPhone: boolean;
   setIsRegister?: boolean;
 }
 
 export interface ILoginInitialValues {
-  phone?: string;
-  email?: string;
+  phone: string;
+  email: string;
 }

@@ -6,9 +6,8 @@ export const loginFormValidation = yup.object({
   phone: yup
     .string()
     .matches(phoneRegExp, 'Number incorrect !')
-    .required('Number required')
     .min(11, 'Number incorrect')
     .max(11, 'Number incorrect'),
 
-  email: yup.string().email('Email incorrect !').required('Email required'),
+  email: yup.string().email('Email incorrect !'),
 });

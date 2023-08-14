@@ -8,7 +8,7 @@ export const ButtonWrapperStyle = styled.div`
 `;
 
 export const ButtonStyle = styled.button`
-  ${tw`w-full rounded bg-blue-900 p-2 text-[12px] text-white`}
+  ${tw`w-full rounded bg-blue-900 p-2 text-[12px] text-white hover:bg-blue-600 hover:text-white transition-all `}
 `;
 
 // Button section style-------------------------------------

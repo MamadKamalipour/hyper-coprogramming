@@ -26,7 +26,7 @@ export const AuthContainer = () => {
       </ButtonWrapperStyle>
       {isRegister ? (
         <LoginLayout>
-          <Login Phone />
+          <Login isPhone />
         </LoginLayout>
       ) : (
         <Register />
