@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 export const LoginStyle = styled.div`
-  ${tw`w-[30rem] min-h-[40rem] flex flex-col justify-center`}
+  ${tw`w-[30rem] min-h-[40rem] flex flex-col justify-center text-blue-900`}
 `;
 
 export const LoginWrapperStyle = styled.form`
@@ -20,7 +20,7 @@ export const WellcomeStyle = styled.span`
 // Input section style-------------------------------------
 
 export const InputWrapperStyle = styled.div`
-  ${tw`flex flex-col gap-4 w-full mb-20`}
+  ${tw`flex flex-col gap-4 w-full `}
 `;
 
 export const InputLableStyle = styled.label`
@@ -28,15 +28,3 @@ export const InputLableStyle = styled.label`
 `;
 
 // Input section style-------------------------------------
-
-// Button section style-------------------------------------
-
-export const ButtonWrapperStyle = styled.div`
-  ${tw`w-full flex justify-center`}
-`;
-
-export const ButtonStyle = styled.button`
-  ${tw`w-full rounded bg-blue-900 p-2 text-[12px] text-white`}
-`;
-
-// Button section style-------------------------------------

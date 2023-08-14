@@ -1,9 +1,10 @@
+import { Button } from '@components/Shared/Button/Button';
 import { Input } from '@components/Shared/Input/Input';
 import { useFormik } from 'formik';
+import { useState } from 'react';
 import { loginFormValidation } from 'src/validations/loginFormValidation';
+import { OTPForm } from '../OTPForm/OTPForm';
 import {
-  ButtonStyle,
-  ButtonWrapperStyle,
   InputLableStyle,
   InputWrapperStyle,
   LoginStyle,
@@ -13,7 +14,10 @@ import {
 } from './LoginStyle';
 import { ILoginInitialValues, ILoginPropsType } from './LoginType';
 
-export const Login = ({ Phone, Email }: ILoginPropsType) => {
+export const Login = ({ Email }: ILoginPropsType) => {
+  const [otpShow, setOtpShow] = useState(true);
+  const [otp, setOtp] = useState('');
+
   const initialValue: ILoginInitialValues = {
     phone: '',
     email: '',
@@ -111,9 +115,11 @@ export const Login = ({ Phone, Email }: ILoginPropsType) => {
             </>
           )}
         </InputWrapperStyle>
-        <ButtonWrapperStyle>
-          <ButtonStyle type="submit">Send</ButtonStyle>
-        </ButtonWrapperStyle>
+        {!otpShow ? (
+          <Button ButtonText="Send" ButtonType="submit" />
+        ) : (
+          <OTPForm />
+        )}
       </LoginWrapperStyle>
     </LoginStyle>
   );

@@ -1,6 +1,5 @@
 export interface ILoginPropsType {
   Email?: boolean;
-  Phone?: boolean;
   setIsRegister?: boolean;
 }
 
