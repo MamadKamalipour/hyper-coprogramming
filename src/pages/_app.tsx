@@ -3,6 +3,8 @@ import { ModalsProvider } from '@components/Shared/Modals/ModalsProvider/ModalsP
 import { wrapper } from '@redux/store';
 import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../styles/globals.css';
 
 type Props = AppProps;
@@ -17,6 +19,18 @@ export const App = ({ Component, ...props }: Props | any) => {
   return (
     <ThemeProvider enableSystem={false} defaultTheme="dark" attribute="class">
       {checkAuth(<Component {...pageProps} />)}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <ModalsProvider />
     </ThemeProvider>
   );

@@ -1,5 +1,6 @@
 import { Button } from '@components/Shared/Button/Button';
 import { Input } from '@components/Shared/Input/Input';
+import { Toastify } from '@components/Shared/Toastify/Toastify';
 import { useFormik } from 'formik';
 import { useState } from 'react';
 import { loginFormValidation } from 'src/validations/loginFormValidation';
@@ -24,7 +25,11 @@ export const Login = () => {
   };
 
   const handleSubmit = (value: string) => {
-    console.log(value);
+    Toastify({
+      type: 'success',
+      text: 'Code send to your Phone or Email',
+      id: value,
+    });
     setOtpShow(true);
   };
 
