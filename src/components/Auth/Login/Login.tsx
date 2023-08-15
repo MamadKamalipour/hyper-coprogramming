@@ -14,14 +14,13 @@ import {
   PageTitleStyle,
   WellcomeStyle,
 } from './LoginStyle';
-import { ILoginInitialValues, ILoginPropsType } from './LoginType';
+import { ILoginInitialValues } from './LoginType';
 
-export const Login = ({ isPhone }: ILoginPropsType) => {
+export const Login = () => {
   const [otpShow, setOtpShow] = useState(false);
 
   const initialValue: ILoginInitialValues = {
-    email: '',
-    phone: '',
+    input: '',
   };
 
   const handleSubmit = (value: string) => {
@@ -32,22 +31,10 @@ export const Login = ({ isPhone }: ILoginPropsType) => {
   const formik = useFormik({
     initialValues: initialValue,
     validationSchema: loginFormValidation,
-    onSubmit: (values) => {
-      const { email, phone } = values;
-      if (!isPhone) {
-        if (email.length > 0) {
-          handleSubmit(email);
-        }
-      } else {
-        if (phone.length > 0) {
-          handleSubmit(phone);
-        }
-      }
+    onSubmit: (values: any) => {
+      handleSubmit(values);
     },
   });
-
-  const { errors } = formik;
-  console.log(errors);
 
   return (
     <LoginStyle>
@@ -56,80 +43,39 @@ export const Login = ({ isPhone }: ILoginPropsType) => {
           <PageTitleStyle>Login</PageTitleStyle>
           <InputWrapperStyle>
             <WellcomeStyle>Hi</WellcomeStyle>
-            {!isPhone ? (
-              <>
-                <InputLableStyle htmlFor="email">
-                  Please enter your Email
-                </InputLableStyle>
-                <Input
-                  value={formik.values.email}
-                  autoComplete="off"
-                  autoCorrect="off"
-                  autoCapitalize="off"
-                  spellCheck="false"
-                  type="text"
-                  id="email"
-                  name="email"
-                  onChange={(e) => {
-                    formik.setValues({
-                      ...formik.values,
-                      email: e.target.value,
-                    });
-                  }}
-                  onFocus={() =>
-                    formik.setTouched({
-                      email: true,
-                    })
-                  }
-                  error={
-                    formik.errors.email && formik.touched.email
-                      ? formik.errors.email
-                      : ''
-                  }
-                  onBlur={formik.handleBlur}
-                  className={`${formik.errors && 'border border-red-950'}`}
-                />
-              </>
-            ) : (
-              <>
-                <InputLableStyle htmlFor="Phone">
-                  Please enter your Phone
-                </InputLableStyle>
-                <Input
-                  value={formik.values.phone}
-                  autoComplete="off"
-                  autoCorrect="off"
-                  autoCapitalize="off"
-                  spellCheck="false"
-                  type="text"
-                  id="phone"
-                  name="phone"
-                  inputMode="numeric"
-                  maxLength={11}
-                  minLength={11}
-                  onChange={(e) => {
-                    formik.setValues({
-                      ...formik.values,
-                      phone: e.target.value,
-                    });
-                  }}
-                  onFocus={() =>
-                    formik.setTouched({
-                      phone: true,
-                    })
-                  }
-                  error={
-                    formik.errors.phone && formik.touched.phone
-                      ? formik.errors.phone
-                      : ''
-                  }
-                  onBlur={formik.handleBlur}
-                  className={`${
-                    formik.errors.phone ? 'border-b-2 border-red-600' : ''
-                  } `}
-                />
-              </>
-            )}
+            <InputLableStyle htmlFor="input">
+              Please enter your Phone or Email
+            </InputLableStyle>
+            <Input
+              value={formik.values.input}
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="off"
+              spellCheck="false"
+              type="text"
+              id="input"
+              name="input"
+              onChange={(e) => {
+                formik.setValues({
+                  ...formik.values,
+                  input: e.target.value,
+                });
+              }}
+              onFocus={() =>
+                formik.setTouched({
+                  input: true,
+                })
+              }
+              error={
+                formik.errors.input && formik.touched.input
+                  ? (formik.errors.input as string)
+                  : ''
+              }
+              onBlur={formik.handleBlur}
+              className={`${
+                formik.errors.input ? 'border-b-2 border-red-600' : ''
+              } `}
+            />
           </InputWrapperStyle>
           <Button ButtonText="Send" ButtonType="submit" />
         </LoginContainerStyle>

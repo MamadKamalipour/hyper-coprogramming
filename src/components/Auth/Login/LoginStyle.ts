@@ -32,7 +32,7 @@ export const InputWrapperStyle = styled.div`
 `;
 
 export const InputLableStyle = styled.label`
-  ${tw`text-sm font-medium text-gray-600 dark:text-blue-900 capitalize`}
+  ${tw`text-sm font-medium text-gray-600 dark:text-blue-900 `}
 `;
 
 // Input section style-------------------------------------
@@ -42,5 +42,6 @@ export const OtpContainer = styled.div<{ otpShow: boolean }>`
   position: absolute;
   transform: ${({ otpShow }) => !otpShow && 'translateX(0)'};
   opacity: ${({ otpShow }) => !otpShow && '0'};
+  z-index: ${({ otpShow }) => (otpShow ? '100' : '0')};
   transition: 200ms ease-in-out;
 `;
