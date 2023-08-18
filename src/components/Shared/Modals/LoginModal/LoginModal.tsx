@@ -6,10 +6,10 @@ import { Modal } from "../base/Modal"
 export const LoginModal = () => {
     const { loginModal } = useAppSelector(state => state.modals)
     const { dispatch } = useBaseComponent()
-    const { isOpen, data } = loginModal
+    const { isOpen, data, name } = loginModal
     return (
-        <Modal isOpen={isOpen} onClose={() => {
-            dispatch(openLoginModal({isOpen:false , data:''}))
+        <Modal isOpen={isOpen} name={name} onClose={() => {
+            dispatch(openLoginModal({ isOpen: false, data: '', name: '' }))
         }} >
             <p>{data}</p>
         </Modal>

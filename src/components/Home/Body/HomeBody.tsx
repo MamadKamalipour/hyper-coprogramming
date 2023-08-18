@@ -8,7 +8,11 @@ export const HomeBody = (props: IHomeBodyType) => {
   return (
     <StyledHomeBodyImageWrapper>
       <button onClick={() => {
-        dispatch(openLoginModal({ isOpen: true, data: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia odio rem sunt nesciunt soluta dolore autem adipisci magnam, ullam fuga nostrum ipsum facere error necessitatibus possimus nobis perferendis, dicta deserunt!" }))
+        dispatch(openLoginModal({
+          isOpen: true,
+          data: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. ",
+          name: 'First Modal'
+        }))
       }}>open modal</button>
     </StyledHomeBodyImageWrapper>
   );

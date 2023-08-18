@@ -6,8 +6,11 @@ import { StyledDialogTitle } from './ModalStyle'
 import { IModalProps, IModalState } from './ModalType'
 
 export const Modal = (props: IModalProps) => {
-    const { helper } = useBaseComponent<IModalProps, IModalState, ReturnType<typeof useModalHelper>>({ props, helperHook: useModalHelper })
-    const { isOpen, onClose, children } = props
+    const { helper } = useBaseComponent<IModalProps,
+        IModalState,
+        ReturnType<typeof useModalHelper>>({ props, helperHook: useModalHelper })
+
+    const { isOpen, onClose, children, name } = props
     const { } = helper
 
     return (
@@ -42,7 +45,7 @@ export const Modal = (props: IModalProps) => {
                                         as="h3"
                                         className="text-lg font-medium leading-6 text-gray-900"
                                     >
-                                        Payment successful
+                                        {name}
                                     </StyledDialogTitle>
                                     {children}
                                 </Dialog.Panel>
