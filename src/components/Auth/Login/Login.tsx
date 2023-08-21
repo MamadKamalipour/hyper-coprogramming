@@ -4,7 +4,7 @@ import { Toastify } from '@components/Shared/Toastify/Toastify';
 import { useFormik } from 'formik';
 import { useState } from 'react';
 import { loginFormValidation } from 'src/validations/loginFormValidation';
-import { OTPForm } from '../OTPForm/OTPForm';
+import { OTP } from '../OTP/OTP';
 import {
   InputLableStyle,
   InputWrapperStyle,
@@ -86,7 +86,7 @@ export const Login = () => {
         </LoginContainerStyle>
       </LoginWrapperStyle>
       <OtpContainer otpShow={otpShow}>
-        <OTPForm />
+        <OTP />
       </OtpContainer>
       <span
         onClick={() => setOtpShow(!otpShow)}
