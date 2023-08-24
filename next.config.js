@@ -28,7 +28,7 @@ const nextConfig = withPWA({
       '@pages': join(__dirname, './pages'),
       '@containers': join(__dirname, './containers'),
       '@icon': join(__dirname, './public/Icon'),
-      '@image': join(__dirname, './public/images'),
+      '@image': join(__dirname, './public/static/images'),
       '@api': join(__dirname, './src/api'),
       '@base': join(__dirname, './src/base'),
       '@components': join(__dirname, './src/components'),

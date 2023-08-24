@@ -1,5 +1,4 @@
 import { useBaseComponent } from '@base/BaseComponent';
-import { useTheme } from 'next-themes';
 import { useThemeSwitcherHelper } from './ThemeSwitcherHelper';
 import {
   StyledThemeSwitcherButton,
@@ -17,8 +16,7 @@ export const ThemeSwitcher = (props: IThemeSwitcherProps) => {
     props,
     helperHook: useThemeSwitcherHelper,
   });
-  const { themeToggleHandler } = helper;
-  const { theme } = useTheme();
+  const { themeToggleHandler, theme } = helper;
 
   return (
     <>

@@ -20,7 +20,7 @@
       "@pages/*": ["pages/*"],
       "@containers/*": ["containers/*"],
       "@icon/*": ["public/Icon/*"],
-      "@image/*": ["public/images/*"],
+      "@image/*": ["public/static/images/*"],
       "@api/*": ["src/api/*"],
       "@base/*": ["src/base/*"],
       "@components/*": ["src/components/*"],

@@ -1,6 +1,6 @@
 import { useTheme } from 'next-themes';
 export const useThemeSwitcherHelper = () => {
-  const { setTheme } = useTheme();
+  const { setTheme, theme } = useTheme();
 
   const themeToggleHandler = (isChecked: boolean) => {
     if (!isChecked) {
@@ -10,5 +10,6 @@ export const useThemeSwitcherHelper = () => {
   };
   return {
     themeToggleHandler,
+    theme,
   };
 };
